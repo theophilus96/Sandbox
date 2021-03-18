@@ -8,9 +8,12 @@ import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./reducer";
 import axios from "./axios";
 import { db } from "./firebase";
+import useFirestore from "./hooks/useFirestore";
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
+
+  const { docs }=useFirestore("users")
 
   const history = useHistory();
   const stripe = useStripe();
@@ -83,18 +86,16 @@ function Payment() {
           </h1>
           <div className="payment__section">
             <div className="payment__title">
-              <h3>Delivery Address</h3>
+              <h3>Email Address</h3>
             </div>
             <div className="payment__address">
               <p>{user?.email}</p>
-              <p>cck</p>
-              <p>singapore</p>
             </div>
           </div>
 
           <div className="payment__section">
             <div className="payment__title">
-              <h3>Review items and delivery</h3>
+              <h3>Products and Services</h3>
             </div>
             <div className="payment__items">
               {basket.map((item) => (

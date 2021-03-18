@@ -28,7 +28,7 @@
 }
 
 .header__searchInput {
-  height: 12px;
+  height: 30px;
   padding: 10px;
   border: none;
   width: 80%;
@@ -36,7 +36,7 @@
 
 .header__searchIcon {
   padding: 5px;
-  height: 22px !important;
+  height: 30px !important;
   background-color: #cd9042;
 }
 
